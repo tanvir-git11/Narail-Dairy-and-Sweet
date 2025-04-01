@@ -1,5 +1,3 @@
-
-
 /* Updated CSS for Sweet Shop */
 * {
     margin: 0;
@@ -16,16 +14,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(222, 175, 4, 0.2); /* হালকা স্বচ্ছ ব্যাকগ্রাউন্ড */
-    backdrop-filter: blur(1px); /* ব্যাকগ্রাউন্ড ব্লার */
-    -webkit-backdrop-filter: blur(10px); /* Safari এর জন্য */
+    background: rgba(222, 175, 4, 0.2);
+    /* হালকা স্বচ্ছ ব্যাকগ্রাউন্ড */
+    backdrop-filter: blur(1px);
+    /* ব্যাকগ্রাউন্ড ব্লার */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari এর জন্য */
     color: white;
     padding: 15px 30px;
-    position: fixed; /* উপরে ফিক্সড থাকবে */
+    position: fixed;
+    /* উপরে ফিক্সড থাকবে */
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* অন্য কনটেন্টের ওপরে রাখবে */
+    z-index: 1000;
+    /* অন্য কনটেন্টের ওপরে রাখবে */
 }
 
 
@@ -110,13 +113,16 @@ body {
     text-align: center;
     flex-wrap: wrap;
     padding: 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://assets.architecturaldigest.in/photos/64cbaa7db462697ebd0b5f21/16:9/w_1616,h_909,c_limit/Untitled%20design%20(27).png');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url('/Untitled\ design\ \(27\).png');
+
     background-size: cover;
     background-position: center;
     color: white;
     background-blend-mode: darken;
-  
+
 }
+
 
 
 .hero-text {
@@ -134,14 +140,17 @@ body {
     font-size: 20px;
     color: #ffffff;
     margin: 15px 0;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.656);
+    line-height: 30px;
 }
 
 
 
 .btn {
-    display: inline-flex; /* Text & Image সুন্দরভাবে align করার জন্য */
-    align-items: center; /* ইমেজ ও টেক্সট সেন্টার রাখার জন্য */
+    display: inline-flex;
+    /* Text & Image সুন্দরভাবে align করার জন্য */
+    align-items: center;
+    /* ইমেজ ও টেক্সট সেন্টার রাখার জন্য */
     color: #ffffff;
     background: linear-gradient(to left, #ff9500, rgb(197, 105, 1));
     border-radius: 5px;
@@ -154,7 +163,8 @@ body {
 }
 
 .btn img {
-    width: 100%; /* ইমেজের আকার ঠিক করার জন্য */
+    width: 100%;
+    /* ইমেজের আকার ঠিক করার জন্য */
     position: absolute;
     height: 100%;
     margin-left: 56px;
@@ -167,8 +177,10 @@ body {
 }
 
 .btn:hover img {
-    transform: translateX(5px); /* হোভার করলে ইমেজ একটু ডান দিকে যাবে */
+    transform: translateX(5px);
+    /* হোভার করলে ইমেজ একটু ডান দিকে যাবে */
 }
+
 /* পপআপ */
 /* পপআপ ব্যাকগ্রাউন্ড (Overlay) */
 .popup-overlay {
@@ -184,22 +196,41 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 /* পপআপ বক্স */
 .popup-box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    padding: 25px;
+    border-radius: 12px;
     text-align: center;
-    width: 300px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     opacity: 0;
-    transform: scale(0.5) translateY(50px); /* ছোট ও নিচে থাকবে */
+    transform: scale(0.5) translateY(50px);
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    color: #fff;
 }
 
-/* পপআপ ওপেন হলে বাটন থেকে উঠে আসবে */
+.popup-box h2 {
+    font-size: 28px;
+    color: #ffee00;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.676);
+}
+
+.popup-box pre {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    white-space: pre-wrap;
+    color: #fff;
+}
+
+/* পপআপ ওপেন হলে */
 .popup-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -210,22 +241,46 @@ body {
     opacity: 1;
 }
 
-
 /* পপআপের ক্লোজ বাটন */
 .close-popup {
-    padding: 10px 15px;
-    background: #d2691e;
-    color: white;
+    padding: 14px 22px;
+    background: #ffcc00;
+    color: #333;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
     transition: 0.3s;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .close-popup:hover {
-    background: #a0522d;
+    background: #ffaa00;
+    color: #000;
 }
 
+/* মোবাইল ও রেস্পন্সিভ ডিজাইন */
+@media (max-width: 768px) {
+    .popup-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .popup-box h2 {
+        font-size: 24px;
+    }
+
+    .popup-box pre {
+        font-size: 17px;
+    }
+
+    .close-popup {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+}
 
 
 
@@ -252,6 +307,7 @@ body {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(-10px);
     }
@@ -261,6 +317,7 @@ body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -272,7 +329,7 @@ body {
         text-align: center;
         height: 100vh;
         align-items: center;
-        
+
     }
 
     .hero-text {
@@ -282,6 +339,7 @@ body {
 
     .hero-text p {
         font-size: 15px;
+        line-height: 24px;
     }
 
     .hero-image {
@@ -295,9 +353,12 @@ body {
 /* About Section এর ডিজাইন */
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -307,10 +368,11 @@ body {
 .about-section {
     display: flex;
     /* flex-direction: column; */
-    
+
     justify-content: space-between;
     align-items: center;
-    height: 100vh; /* পুরো স্ক্রিন জুড়ে দেখাবে */
+    height: 100vh;
+    /* পুরো স্ক্রিন জুড়ে দেখাবে */
     padding: 50px 20px;
     background: linear-gradient(135deg, #ff9500, #ff4500);
     color: #ffffff;
@@ -351,7 +413,7 @@ body {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    animation: bounce 2s infinite alternate; 
+    animation: bounce 2s infinite alternate;
 }
 
 .stats {
@@ -381,8 +443,8 @@ body {
 
 @media screen and (max-width: 768px) {
     .about-section {
-        flex-direction: column; 
-        text-align: center; 
+        flex-direction: column;
+        text-align: center;
         padding: 30px 15px;
 
     }
@@ -391,14 +453,16 @@ body {
         width: 100%;
         max-width: 100%;
         padding: 0;
-        margin-left: 0; /* মোবাইলে মার্জিন রিসেট */
+        margin-left: 0;
+        /* মোবাইলে মার্জিন রিসেট */
     }
 
-    .about-content h2{
+    .about-content h2 {
         font-size: 50px;
         margin-left: 0;
         margin-top: 70px;
-    } 
+    }
+
     .about-content p {
         font-size: 20px;
         margin-left: 0;
@@ -408,7 +472,8 @@ body {
     .about-image {
         width: 100%;
         max-width: 100%;
-        margin-right: 0; /* মোবাইলে মার্জিন রিসেট */
+        margin-right: 0;
+        /* মোবাইলে মার্জিন রিসেট */
     }
 
     .stats {
@@ -433,7 +498,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
 }
 
 .menu-section h2 {
@@ -446,7 +511,8 @@ body {
 .menu-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* কেন্দ্রবিন্দুতে রাখবে */
+    justify-content: center;
+    /* কেন্দ্রবিন্দুতে রাখবে */
     gap: 20px;
     max-width: 50%;
 }
@@ -457,7 +523,8 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: calc(33.333% - 20px); /* এক লাইনে তিনটি আইটেম থাকবে */
+    width: calc(33.333% - 20px);
+    /* এক লাইনে তিনটি আইটেম থাকবে */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
@@ -505,14 +572,16 @@ body {
 /* Responsive Fix */
 @media screen and (max-width: 1024px) {
     .menu-item {
-        width: calc(50% - 20px); /* Medium screen এ দুইটা আইটেম দেখাবে */
+        width: calc(50% - 20px);
+        /* Medium screen এ দুইটা আইটেম দেখাবে */
     }
 }
 
 @media screen and (max-width: 768px) {
     .menu-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* দুই কলামে আইটেম দেখাবে */
+        grid-template-columns: repeat(2, 1fr);
+        /* দুই কলামে আইটেম দেখাবে */
         gap: 10px;
         width: 100%;
         max-width: 90%;
@@ -520,26 +589,34 @@ body {
     }
 
     .menu-item {
-        width: 100%; /* স্ক্রিন অনুযায়ী অ্যাডজাস্ট হবে */
-        max-width: 180px; /* প্রতিটি আইটেমের সর্বোচ্চ প্রস্থ */
-        height: 250px; /* উচ্চতা ঠিক রাখা */
-        padding: 10px; /* প্যাডিং কমানো */
+        width: 100%;
+        /* স্ক্রিন অনুযায়ী অ্যাডজাস্ট হবে */
+        max-width: 180px;
+        /* প্রতিটি আইটেমের সর্বোচ্চ প্রস্থ */
+        height: 250px;
+        /* উচ্চতা ঠিক রাখা */
+        padding: 10px;
+        /* প্যাডিং কমানো */
     }
 
     .menu-item img {
-        height: 100px; /* ইমেজ ছোট করা */
+        height: 100px;
+        /* ইমেজ ছোট করা */
     }
 
     .menu-item h3 {
-        font-size: 16px; /* ফন্ট সাইজ ছোট করা */
+        font-size: 16px;
+        /* ফন্ট সাইজ ছোট করা */
     }
 
     .menu-item p {
-        font-size: 12px; /* টেক্সট ছোট করা */
+        font-size: 12px;
+        /* টেক্সট ছোট করা */
     }
 
     .price {
-        font-size: 14px; /* দাম কম্প্যাক্ট করা */
+        font-size: 14px;
+        /* দাম কম্প্যাক্ট করা */
     }
 }
 
@@ -580,43 +657,45 @@ body {
     gap: 5px;
     place-items: start center;
     margin-bottom: var(--size);
-  }
+}
 
-  .grid-gallery img {
+.grid-gallery img {
     width: calc(var(--size) * 2);
     height: calc(var(--size) * 2);
     object-fit: cover;
     grid-column: auto / span 2;
     border-radius: 5px;
-    clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z"); 
-  }
+    clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z");
+}
 
-  .grid-gallery img:nth-child(5n - 1) { 
-    grid-column: 2 / span 2 
-  }
+.grid-gallery img:nth-child(5n - 1) {
+    grid-column: 2 / span 2
+}
 
-  .grid-gallery:has(img:hover) img:not(:hover) {
+.grid-gallery:has(img:hover) img:not(:hover) {
     filter: brightness(0.5) contrast(0.5);
-  }
+}
 
-  .grid-gallery img {
+.grid-gallery img {
 
     transition: clip-path 0.25s, filter 0.75s;
-  }
-  
-  .grid-gallery img:hover {
+}
+
+.grid-gallery img:hover {
     clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z");
     transition: clip-path 0.25s, filter 0.25s;
     z-index: 1;
-  }
-  .grid-gallery a:focus {
+}
+
+.grid-gallery a:focus {
     outline: 1px dashed black;
     outline-offset: -5px;
-  } 
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .grid-gallery {
-        --size: 80px; /* ছোট স্ক্রিনে সাইজ কমানো */
+        --size: 80px;
+        /* ছোট স্ক্রিনে সাইজ কমানো */
     }
 
     .grid-gallery img {
@@ -627,7 +706,8 @@ body {
 
 @media screen and (max-width: 480px) {
     .grid-gallery {
-        --size: 60px; /* আরও ছোট স্ক্রিনে আরও ছোট */
+        --size: 60px;
+        /* আরও ছোট স্ক্রিনে আরও ছোট */
     }
 }
 
@@ -773,16 +853,15 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
     cursor: pointer;
 }
 
 .live-chat img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+   
     transition: transform 0.3s ease-in-out;
 }
 
@@ -794,18 +873,22 @@ body {
 /* Responsive Design for Smaller Screens */
 @media screen and (max-width: 1024px) {
     .contact-form {
-        width: 70%; /* ট্যাবলেটের জন্য ফর্মের সাইজ ছোট করা */
+        width: 70%;
+        /* ট্যাবলেটের জন্য ফর্মের সাইজ ছোট করা */
     }
 }
 
 @media screen and (max-width: 768px) {
+
     /* Contact Section Responsive */
     .contact-form {
-        width: 90%; /* মোবাইলের জন্য ফর্মের সাইজ আরও ছোট করা */
+        width: 90%;
+        /* মোবাইলের জন্য ফর্মের সাইজ আরও ছোট করা */
     }
 
     .social-links {
-        flex-wrap: wrap; /* আইকনগুলো নিচে নামিয়ে দেয়া */
+        flex-wrap: wrap;
+        /* আইকনগুলো নিচে নামিয়ে দেয়া */
         gap: 10px;
     }
 
@@ -816,21 +899,24 @@ body {
 
     /* Live Chat Button Responsive */
     .live-chat {
-        width: 45px;
-        height: 45px;
-        bottom: 15px; /* মোবাইলে নিচে আরও জায়গা রাখা */
-        right: 15px;
+        width: 150px;
+        height: 150px;
+        bottom: 10px;
+        right: 10px;
     }
 }
 
 @media screen and (max-width: 480px) {
+
     /* Smaller Phones */
     .contact-section h2 {
-        font-size: 28px; /* হেডিং ছোট করা */
+        font-size: 28px;
+        /* হেডিং ছোট করা */
     }
 
     .contact-section p {
-        font-size: 16px; /* প্যারা টেক্সট ছোট করা */
+        font-size: 16px;
+        /* প্যারা টেক্সট ছোট করা */
     }
 
     .form-group label {
@@ -840,11 +926,13 @@ body {
     .form-group input,
     .form-group textarea {
         font-size: 14px;
-        padding: 8px; /* ইনপুট ফিল্ড ছোট করা */
+        padding: 8px;
+        /* ইনপুট ফিল্ড ছোট করা */
     }
 
     .contact-btn {
         font-size: 16px;
-        padding: 10px; /* বাটন ছোট করা */
+        padding: 10px;
+        /* বাটন ছোট করা */
     }
 }
