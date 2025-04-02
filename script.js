@@ -95,3 +95,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+let lastScrollTop = 0;
+document.addEventListener("scroll", function () {
+  let footer = document.querySelector(".footer");
+  let scrollHeight = document.documentElement.scrollHeight;
+  let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  let clientHeight = document.documentElement.clientHeight;
+
+  if (scrollTop + clientHeight >= scrollHeight - 10) {
+    // যখন একদম নিচে চলে যাবে তখন ফিক্সড থাকবে
+    footer.style.bottom = "0";
+  } else if (scrollTop > lastScrollTop) {
+    // নিচের দিকে স্ক্রল করলে ফুটার দেখাবে
+    footer.style.bottom = "0";
+  } else {
+    // স্ক্রল বন্ধ করলে লুকিয়ে রাখবে
+    footer.style.bottom = "-100px";
+  }
+  lastScrollTop = scrollTop;
+});

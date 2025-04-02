@@ -114,7 +114,7 @@ body {
     flex-wrap: wrap;
     padding: 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-        url('/Untitled\ design\ \(27\).png');
+        url('backround.svg');
 
     background-size: cover;
     background-position: center;
@@ -160,6 +160,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.3s ease-in-out;
+    z-index: 1;
 }
 
 .btn img {
@@ -295,9 +296,10 @@ body {
     align-items: center;
 }
 
-.hero-image img {
-    width: 100%;
-    height: 100%;
+.hero-image .img {
+    width: 1632px;
+    height: 1632px;
+    padding: 0px;
     object-fit: cover;
     border-radius: 10px;
     animation: bounce 2s infinite alternate;
@@ -856,19 +858,39 @@ body {
     width: 200px;
     height: 200px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
+/* WhatsApp Logo */
 .live-chat img {
     width: 100%;
     height: 100%;
-   
     transition: transform 0.3s ease-in-out;
 }
 
-.live-chat img:hover {
-    transform: scale(1.1);
+/* Hidden Text */
+.chat-text {
+    position: absolute;
+    left: -70px;
+    bottom: 65px;
+    background: #666666;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
+/* Show Text on Hover */
+.live-chat:hover .chat-text {
+    opacity: 1;
+}
 
 /* Responsive Design for Smaller Screens */
 @media screen and (max-width: 1024px) {
@@ -904,6 +926,7 @@ body {
         bottom: 10px;
         right: 10px;
     }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -935,4 +958,83 @@ body {
         padding: 10px;
         /* বাটন ছোট করা */
     }
+}
+
+
+/* Footer Design */
+.footer {
+    background: #774401;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: -120px;
+    /* প্রথমে হাইড থাকবে */
+    left: 0;
+    transition: bottom 0.5s ease-in-out;
+}
+
+/* Flexbox for better layout */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.footer-item {
+    display: inline-block;
+}
+
+.footer-item a {
+    color: #25D366;
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    text-decoration: underline;
+}
+
+.img-fluid {
+    width: 500px;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: -29px;
+    margin-left: -100px;
+    display: block;
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer {
+        bottom: 100;
+        position: relative;
+    }
+
+    .footer-item {
+        width: 100%;
+    }
+
+    .img-fluid {
+        height: 80px;
+        margin-left: -180px;
+
+    }
+
+
+
 }
